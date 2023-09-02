@@ -10,7 +10,7 @@ if('serviceWorker' in navigator) {
 if(Notification.permission === "default") {
     setTimeout(() => {
         Notification.requestPermission().then(() => {
-            console.log(121412421);
+           new Notification("asfasfas");
         }).catch((e) => {
             console.error(e);
         });
