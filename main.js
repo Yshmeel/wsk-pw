@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             const img = document.createElement('img');
                             img.src = p.images[0]
                             product.appendChild(img);
+
                             productsList.appendChild(product);
                         });
                     });
