@@ -12,9 +12,10 @@ setTimeout(() => {
         console.log(res);
        switch(res) {
            case 'granted':
-               new Notification("asfasfas", {
+               const r = new Notification("asfasfas", {
                    body: "Я люблю, ненавижу"
                });
+               console.log(r);
                break;
        }
     }).catch((e) => {
