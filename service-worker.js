@@ -12,6 +12,7 @@ self.addEventListener('install', function(event) {
 });
 
 self.addEventListener('fetch', (event) => {
+    console.log(event);
     event.respondWith(fromNetwork(event, 5000).catch(() => fromCache(event)));
     event.waitUntil(update(event));
 });
