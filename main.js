@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                             productsList.appendChild(product);
                         });
-                    });
+                    }).catch(console.error);
                 }());
             }).catch(() => {
             console.error('Something went wrong when attempting to register service worker');
