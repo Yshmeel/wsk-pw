@@ -7,19 +7,17 @@ if('serviceWorker' in navigator) {
         });
 }
 
-if(Notification.permission === "default") {
-    setTimeout(() => {
-        Notification.requestPermission().then((res) => {
-            console.log(res);
-           switch(res) {
-               case 'granted':
-                   new Notification("asfasfas", {
-                       body: "Я люблю, ненавижу"
-                   });
-                   break;
-           }
-        }).catch((e) => {
-            console.error(e);
-        });
-    }, 1000);
-}
+setTimeout(() => {
+    Notification.requestPermission().then((res) => {
+        console.log(res);
+       switch(res) {
+           case 'granted':
+               new Notification("asfasfas", {
+                   body: "Я люблю, ненавижу"
+               });
+               break;
+       }
+    }).catch((e) => {
+        console.error(e);
+    });
+}, 1000);
