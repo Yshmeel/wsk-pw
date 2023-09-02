@@ -28,6 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         res.products.forEach((p) => {
                             const product = document.createElement('div');
                             product.innerHTML = p.title;
+
+                            const img = document.createElement('img');
+                            img.src = p.images[0]
+                            product.appendChild(img);
                             productsList.appendChild(product);
                         });
                     });
