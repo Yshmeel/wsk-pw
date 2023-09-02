@@ -1,4 +1,5 @@
-const CACHE_NAME = 'es';
+const VERSION = '1.0';
+const CACHE_NAME = `es-${VERSION}`;
 
 self.addEventListener('activate', function(event) {
     event.waitUntil(
@@ -11,7 +12,7 @@ self.addEventListener('install', function(event) {
 });
 
 self.addEventListener('fetch', (event) => {
-    event.respondWith(fromNetwork(event.request, 5000).catch(() => fromCache(event)));
+    event.respondWith(fromNetwork(event, 5000).catch(() => fromCache(event)));
     event.waitUntil(update(event));
 });
 
@@ -40,6 +41,11 @@ const fromCache = (evt) => {
 
 const update = (evt) => {
     return caches.open(CACHE_NAME).then((cache) => {
+        // ignore chrome-extension
+        if(evt.request.url.startsWith('chrome-extension')) {
+            return;
+        }
+
         fetch(evt.request.url).then((a) => cache.put(evt.request, a));
     });
 };
