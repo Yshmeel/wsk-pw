@@ -1,21 +1,11 @@
 const VERSION = '1.0';
 const CACHE_NAME = `es-${VERSION}`;
 
-self.addEventListener('activate', function(event) {
-    event.waitUntil(
-        caches.delete(CACHE_NAME)
-    );
-
-    self.clients.claim();
-});
-
 self.addEventListener('install', function(event) {
     console.log('[Service worker] Successfully installed');
 });
 
 self.addEventListener('fetch', (event) => {
-    console.log(event);
-    console.log(fromNetwork(event, 5000).catch(() => fromCache(event)));
     event.respondWith(fromNetwork(event, 5000).catch(() => fromCache(event)));
     event.waitUntil(update(event));
 });
