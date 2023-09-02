@@ -42,6 +42,7 @@ const fromCache = (evt) => {
 };
 
 const update = (evt) => {
+    console.log("update", evt)
     return caches.open(CACHE_NAME).then((cache) => {
         // ignore chrome-extension
         if(evt.request.url.startsWith('chrome-extension')) {
