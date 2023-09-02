@@ -36,7 +36,7 @@ const fromNetwork = (evt, timeout) => {
 
 const fromCache = (evt) => {
     return caches.open(CACHE_NAME).then(cache => {
-        cache.match(evt.request).then((m) => m);
+        return cache.match(evt.request).then((m) => m);
     });
 };
 
@@ -47,7 +47,7 @@ const update = (evt) => {
             return;
         }
 
-        fetch(evt.request.url).then((a) => cache.put(evt.request, a));
+        return fetch(evt.request.url).then((a) => cache.put(evt.request, a));
     });
 };
 
