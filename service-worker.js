@@ -5,6 +5,8 @@ self.addEventListener('activate', function(event) {
     event.waitUntil(
         caches.delete(CACHE_NAME)
     );
+
+    self.clients.claim();
 });
 
 self.addEventListener('install', function(event) {
