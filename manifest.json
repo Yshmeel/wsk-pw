@@ -7,9 +7,10 @@
   "description": "EuroSkills PWA",
   "icons": [
     {
-      "src": "",
+      "src": "./icon.png",
       "sizes": "48x48",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
 }
