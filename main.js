@@ -19,8 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(() => {
                 console.log('Service worker has been registered');
 
-
-
                 const productsList = document.querySelector('.products-list');
 
                 (async function() {

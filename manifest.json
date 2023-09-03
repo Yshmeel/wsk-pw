@@ -1,0 +1,15 @@
+{
+  "name": "EuroSkills",
+  "short_name": "EuroSkills 2023 PWA",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "EuroSkills PWA",
+  "icons": [
+    {
+      "src": "",
+      "sizes": "48x48",
+      "type": "image/png"
+    }
+  ]
+}
